@@ -5,22 +5,25 @@ import com.example.tpeducation.repositories.EnseignantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EnseigantServiceImpl implements  EnseignantService{
+public class EnseingantServiceImpl implements  EnseignantService{
     @Autowired
     private  final EnseignantRepository enseignantRepository;
 
-    public EnseigantServiceImpl(EnseignantRepository enseignantRepository) {
+    public EnseingantServiceImpl(EnseignantRepository enseignantRepository) {
         this.enseignantRepository = enseignantRepository;
     }
 
     @Override
-    public List<Enseignant> retrieveAllEnseigannts() {
-        enseignantRepository.findAll();
-        return null;
+    public List<Enseignant> retrieveAllEnseigants() {
+        List<Enseignant> enseignants = new ArrayList<>();
+        enseignantRepository.findAll().forEach(enseignants::add);
+        return enseignants;
     }
+
 
     @Override
     public Enseignant addEnseigant(Enseignant c) {

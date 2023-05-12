@@ -6,7 +6,7 @@ import com.example.tpeducation.repositories.EnseignantRepository;
 import java.util.List;
 
 public interface EnseignantService {
-    List<Enseignant> retrieveAllEnseigannts();
+    List<Enseignant> retrieveAllEnseigants();
     Enseignant addEnseigant(Enseignant c);
     void deleteEnseigant(Integer id);
     Enseignant updateEnseigant(Enseignant c);
